@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
+    <h1>Страница находится в разработке</h1>
     <p>
-      login works!
+      login works! 
     </p>
   `,
   styles: ``

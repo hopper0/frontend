@@ -6,6 +6,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {CustomSidenavComponent} from "./components/custom-sidenav/custom-sidenav.component";
+import {MainComponent} from "./pages/main/main.component";
+import {DisciplinesComponent} from "./pages/disciplines/disciplines.component";
+import {TestingComponent} from "./pages/testing/testing.component";
+import {MygroupComponent} from "./pages/mygroup/mygroup.component";
+import {ScheduleComponent} from "./pages/schedule/schedule.component";
+import {MypersonalpageComponent} from "./pages/mypersonalpage/mypersonalpage.component";
+import {SessionComponent} from "./pages/session/session.component";
 
 @Component({
     selector: 'app-root',
@@ -17,35 +24,24 @@ import {CustomSidenavComponent} from "./components/custom-sidenav/custom-sidenav
         MatButtonModule,
         MatIconModule,
         MatSidenavModule,
-        CustomSidenavComponent
+        CustomSidenavComponent,
+        MainComponent,
+    ],
+    providers: [
+        MainComponent,
+        DisciplinesComponent,
+        TestingComponent,
+        MygroupComponent,
+        ScheduleComponent,
+        MypersonalpageComponent,
+        SessionComponent
     ],
     template: `
-        <mat-toolbar class="mat-elevation-z3">
-            <button mat-icon-button (click)="callapsed.set(!callapsed())">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </mat-toolbar>
-        <mat-sidenav-container>
-            <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-                <app-custom-sidenav [collapsed]="callapsed()"></app-custom-sidenav>
-            </mat-sidenav>
-            <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-                <router-outlet></router-outlet>
-            </mat-sidenav-content>
-        </mat-sidenav-container>
-
+        <router-outlet></router-outlet>
     `,
-    styles: [
-        '.content{ padding: 24px;}',
-        'mat-toolbar{position: relative;z-index: 5;}',
-        'mat-sidenav-container{height: calc(100vh - 64px)}',
-        'mat-sidenav,mat-sidenav-contant{transition: all 500ms ease-in-out}'
+    styles: [],
 
-    ],
 })
 export class AppComponent {
     title = 'NSTU Student Portal';
-
-    callapsed = signal(false)
-    sidenavWidth = computed(() => this.callapsed() ? '65px' : '250px');
 }

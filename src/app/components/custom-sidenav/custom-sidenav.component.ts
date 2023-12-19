@@ -42,13 +42,14 @@ export type MenuItem = {
                [routerLink]="item.route"
                routerLinkActive="selected-menu-item"
                #rla="routerLinkActive"
-               [activated]="rla.isActive">
+               [class.activated]="rla.isActive">
 
                 <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
 
                 <span matListItemTitle *ngIf="!sideNavCollapsed()">{{ item.label }}</span>
             </a>
         </mat-nav-list>
+        
     `,
     styles: [`
 
@@ -140,7 +141,7 @@ export class CustomSidenavComponent {
         {
             icon: 'cyclone',
             label: 'Сессия',
-            route: 'session'
+            route: '/main/session'
         },
     ])
 

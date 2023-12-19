@@ -15,35 +15,37 @@ export const routes: Routes = [
         redirectTo:'login'
     },
     {
-        path:'main',
-        component:MainComponent,
+        path: 'main',
+        component: MainComponent,
+        children: [
+            {
+                path: 'disciplines',
+                component: DisciplinesComponent,
+            },
+            {
+                path: 'testing',
+                component: TestingComponent,
+            },
+            {
+                path: 'mygroup',
+                component: MygroupComponent
+            },
+            {
+                path: 'schedule',
+                component: ScheduleComponent,
+            },
+            {
+                path: 'mypersonalpage',
+                component: MypersonalpageComponent,
+            },
+            {
+                path: 'session',
+                component: SessionComponent,
+            }
+        ]
     },
     {
-        path:'login',
-        component:LoginComponent,
-    },
-    {
-        path:'disciplines',
-        component:DisciplinesComponent,
-    },
-    {
-        path:'testing',
-        component:TestingComponent,
-    },
-    {
-        path:'mygroup',
-        component:MygroupComponent
-    },
-    {
-        path:'schedule',
-        component:ScheduleComponent,
-    },
-    {
-        path:'mypersonalpage',
-        component:MypersonalpageComponent,
-    },
-    {
-        path:'session',
-        component:SessionComponent,
+        path: 'login',
+        component: LoginComponent,
     }
 ];

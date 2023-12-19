@@ -7,11 +7,13 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
+
+
+//Основная страница отображения контента
 @Component({
   selector: 'app-main',
   standalone: true,
   imports: [
-    AppComponent,
     RouterOutlet,
     CustomSidenavComponent,
     MatButtonModule,
