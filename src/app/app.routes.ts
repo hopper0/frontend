@@ -7,12 +7,13 @@ import {MypersonalpageComponent} from "./pages/mypersonalpage/mypersonalpage.com
 import {SessionComponent} from "./pages/session/session.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {MainComponent} from "./pages/main/main.component";
+import {LandingComponent} from "./pages/landing/landing.component";
 
 export const routes: Routes = [
     {
         path:'',
         pathMatch:'full',
-        redirectTo:'login'
+        component:LandingComponent
     },
     {
         path: 'main',
